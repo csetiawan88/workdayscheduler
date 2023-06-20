@@ -6,8 +6,6 @@
 var today = dayjs();
 $("#currentDay").text(today.format("dddd, MMMM D"));
 
-
-
 $(function (saveTask) {
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
@@ -48,6 +46,13 @@ $(function (saveTask) {
   //
   {
 
+ // For / While Loop
+
+//  $('.saveBtn').click(function () {
+//     let i = 
+//     for (let i = 0; i <= 17; i++) {
+
+//     }
 
     $('.saveBtn').click(function () {
         var hr9 = document.getElementById('9').value;
@@ -70,6 +75,9 @@ $(function (saveTask) {
         localStorage.setItem('text17', hr17);
     });
  }
+
+ // For / While Loop
+
 
           var saved9 = localStorage.getItem('text9');
           document.getElementById('9').value = saved9;
@@ -94,14 +102,14 @@ $(function (saveTask) {
 
 // Add message after click save button for 2 seconds: ..... Saved to local storage
 
-          var message = $("<p>");
-          message.addClass("col-12");
-          message.text(
-            `${$(this)} saved to local storage`
-          );
+          // var message = $("<p>");
+          // message.addClass("col-12");
+          // message.text(
+          //   `${$(this)} saved to local storage`
+          // );
 
-          $(".container").before(message);
-          setTimeout(() => {
-            message.remove();
-          }, 1000);
+          // $(".container").before(message);
+          // setTimeout(() => {
+          //   message.remove();
+          // }, 1000);
 
