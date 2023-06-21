@@ -3,7 +3,7 @@ var today = dayjs();
 $("#currentDay").text(today.format("dddd, MMMM D, YYYY"));
 
 $(function () {
-  // Apply Past, Present and Future
+  // Apply Past, Present and Future and their color coded.
   var cal = new Date();
   var currentHour = cal.getHours();
   console.log(currentHour);
