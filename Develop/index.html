@@ -29,6 +29,10 @@
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
     </header>
+
+    <div id="textBox">
+    </div> 
+
     <div class="container-lg px-5">
 
       <!-- Use class for "past", "present", and "future" to apply styles to the
@@ -41,35 +45,31 @@
         code is implemented.
         -->
 
-      <!-- Example of a past time block. The "past" class adds a gray background color. -->
+  
 
         <!-- 9AM -->
       <div id="hour-9" class="row time-block">
         <div class="col-2 col-md-1 hour text-center py-3">9AM</div>
         <textarea class="col-8 col-md-10 description" rows="3" id="9"> </textarea>
-        <button onclick="saveTask(9)" class="btn saveBtn col-2 col-md-1" aria-label="save" >
+        <button onclick="saveTask()" class="btn saveBtn col-2 col-md-1" aria-label="save">
           <i class="fas fa-save" aria-hidden="true"></i>
         </button>
       </div>
-
-      <!-- Example of a a present time block. The "present" class adds a red background color. -->
 
         <!-- 10AM -->
       <div id="hour-10" class="row time-block">
         <div class="col-2 col-md-1 hour text-center py-3">10AM</div>
         <textarea class="col-8 col-md-10 description" rows="3" id="10"> </textarea>
-        <button onclick="saveTask(10)" class="btn saveBtn col-2 col-md-1" aria-label="save">
+        <button onclick="saveTask()" class="btn saveBtn col-2 col-md-1" aria-label="save">
           <i class="fas fa-save" aria-hidden="true"></i>
         </button>
       </div>
-
-      <!-- Example of a future time block. The "future" class adds a green background color. -->
 
         <!-- 11AM -->
       <div id="hour-11" class="row time-block">
         <div class="col-2 col-md-1 hour text-center py-3">11AM</div>
         <textarea class="col-8 col-md-10 description" rows="3" id="11"> </textarea>
-        <button onclick="saveTask(11)" class="btn saveBtn col-2 col-md-1" aria-label="save">
+        <button onclick="saveTask()" class="btn saveBtn col-2 col-md-1" aria-label="save">
           <i class="fas fa-save" aria-hidden="true"></i>
         </button>
       </div>
@@ -78,52 +78,55 @@
       <div id="hour-12" class="row time-block">
         <div class="col-2 col-md-1 hour text-center py-3">12PM</div>
         <textarea class="col-8 col-md-10 description" rows="3" id="12"> </textarea>
-        <button onclick="saveTask(12)" class="btn saveBtn col-2 col-md-1" aria-label="save">
+        <button onclick="saveTask()" class="btn saveBtn col-2 col-md-1" aria-label="save">
           <i class="fas fa-save" aria-hidden="true"></i>
         </button>
       </div>
+
           <!-- 1PM -->
       <div id="hour-13" class="row time-block">
         <div class="col-2 col-md-1 hour text-center py-3">1PM</div>
         <textarea class="col-8 col-md-10 description" rows="3" id="13"> </textarea>
-        <button onclick="saveTask(13)" class="btn saveBtn col-2 col-md-1" aria-label="save">
+        <button onclick="saveTask()" class="btn saveBtn col-2 col-md-1" aria-label="save">
           <i class="fas fa-save" aria-hidden="true"></i>
         </button>
       </div>
+
           <!-- 2PM -->
       <div id="hour-14" class="row time-block">
         <div class="col-2 col-md-1 hour text-center py-3">2PM</div>
         <textarea class="col-8 col-md-10 description" rows="3" id="14"> </textarea>
-        <button onclick="saveTask(14)" class="btn saveBtn col-2 col-md-1" aria-label="save">
+        <button onclick="saveTask()" class="btn saveBtn col-2 col-md-1" aria-label="save">
           <i class="fas fa-save" aria-hidden="true"></i>
         </button>
       </div>
+
           <!-- 3PM -->
       <div id="hour-15" class="row time-block">
         <div class="col-2 col-md-1 hour text-center py-3">3PM</div>
         <textarea class="col-8 col-md-10 description" rows="3" id="15"> </textarea>
-        <button onclick="saveTask(15)" class="btn saveBtn col-2 col-md-1" aria-label="save">
+        <button onclick="saveTask()" class="btn saveBtn col-2 col-md-1" aria-label="save">
           <i class="fas fa-save" aria-hidden="true"></i>
         </button>
       </div>
+
           <!-- 4PM -->
       <div id="hour-16" class="row time-block">
         <div class="col-2 col-md-1 hour text-center py-3">4PM</div>
-        <textarea onclick="saveTask(16)" class="col-8 col-md-10 description" rows="3" id="16"> </textarea>
+        <textarea onclick="saveTask()" class="col-8 col-md-10 description" rows="3" id="16"> </textarea>
         <button class="btn saveBtn col-2 col-md-1" aria-label="save">
           <i class="fas fa-save" aria-hidden="true"></i>
         </button>
       </div>
+
           <!-- 5PM -->
       <div id="hour-17" class="row time-block">
         <div class="col-2 col-md-1 hour text-center py-3">5PM</div>
         <textarea class="col-8 col-md-10 description" rows="3" id="17"> </textarea>
-        <button onclick="saveTask(17)" class="btn saveBtn col-2 col-md-1" aria-label="save">
+        <button onclick="saveTask()" class="btn saveBtn col-2 col-md-1" aria-label="save">
           <i class="fas fa-save" aria-hidden="true"></i>
         </button>
       </div>
-
-
 
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

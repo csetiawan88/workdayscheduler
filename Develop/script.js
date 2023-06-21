@@ -2,11 +2,11 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 
- // TODO: Add code to display the current date in the header of the page.
+// Display the current date in the header of the page.
 var today = dayjs();
-$("#currentDay").text(today.format("dddd, MMMM D"));
+$("#currentDay").text(today.format("dddd, MMMM D, YYYY"));
 
-$(function (saveTask) {
+$(function () {
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -20,14 +20,16 @@ $(function (saveTask) {
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
 
-  var cal = new Date(); // init date and time
-  var currentHour = cal.getHours(); // returns 0-23 on a 24 hour clock
+
+  // Apply Past, Present and Future
+  var cal = new Date(); 
+  var currentHour = cal.getHours(); 
   console.log(currentHour);
 
   $("textarea").each(function () {
     var $this = $(this);
     var id = parseInt($this.attr("id"));
-  
+
     if (id < currentHour) {
       $(this).addClass("past");
     }
@@ -44,72 +46,49 @@ $(function (saveTask) {
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
   //
+
+  // Save to local storage
+
+
   {
+    $(".saveBtn").click(function () {
+      var thisValue = $(this).siblings(".description").val();
+      console.log(thisValue);
 
- // For / While Loop
-
-//  $('.saveBtn').click(function () {
-//     let i = 
-//     for (let i = 0; i <= 17; i++) {
-
-//     }
-
-    $('.saveBtn').click(function () {
-        var hr9 = document.getElementById('9').value;
-        localStorage.setItem('text9', hr9);
-        var hr10 = document.getElementById('10').value;
-        localStorage.setItem('text10', hr10);
-        var hr11 = document.getElementById('11').value;
-        localStorage.setItem('text11', hr11);
-        var hr12 = document.getElementById('12').value;
-        localStorage.setItem('text12', hr12);
-        var hr13 = document.getElementById('13').value;
-        localStorage.setItem('text13', hr13);
-        var hr14 = document.getElementById('14').value;
-        localStorage.setItem('text14', hr14);
-        var hr15 = document.getElementById('15').value;
-        localStorage.setItem('text15', hr15);
-        var hr16 = document.getElementById('16').value;
-        localStorage.setItem('text16', hr16);
-        var hr17 = document.getElementById('17').value;
-        localStorage.setItem('text17', hr17);
+      var timeSlot = $(this).siblings().attr("id");
+      localStorage.setItem(timeSlot, thisValue);
     });
- }
+  }
 
- // For / While Loop
+  // Call Local Storage to view after refresh the page
 
-
-          var saved9 = localStorage.getItem('text9');
-          document.getElementById('9').value = saved9;
-          var saved10 = localStorage.getItem('text10');
-          document.getElementById('10').value = saved10;
-          var saved11 = localStorage.getItem('text11');
-          document.getElementById('11').value = saved11;
-          var saved12 = localStorage.getItem('text12');
-          document.getElementById('12').value = saved12;
-          var saved13 = localStorage.getItem('text13');
-          document.getElementById('13').value = saved13;
-          var saved14 = localStorage.getItem('text14');
-          document.getElementById('14').value = saved14;
-          var saved15 = localStorage.getItem('text15');
-          document.getElementById('15').value = saved15;
-          var saved16 = localStorage.getItem('text16');
-          document.getElementById('16').value = saved16;
-          var saved17 = localStorage.getItem('text17');
-          document.getElementById('17').value = saved17;
- 
+  var saved9 = localStorage.getItem("text9");
+  document.getElementById("9").value = saved9;
+  var saved10 = localStorage.getItem("text10");
+  document.getElementById("10").value = saved10;
+  var saved11 = localStorage.getItem("text11");
+  document.getElementById("11").value = saved11;
+  var saved12 = localStorage.getItem("text12");
+  document.getElementById("12").value = saved12;
+  var saved13 = localStorage.getItem("text13");
+  document.getElementById("13").value = saved13;
+  var saved14 = localStorage.getItem("text14");
+  document.getElementById("14").value = saved14;
+  var saved15 = localStorage.getItem("text15");
+  document.getElementById("15").value = saved15;
+  var saved16 = localStorage.getItem("text16");
+  document.getElementById("16").value = saved16;
+  var saved17 = localStorage.getItem("text17");
+  document.getElementById("17").value = saved17;
 });
 
 // Add message after click save button for 2 seconds: ..... Saved to local storage
 
-          // var message = $("<p>");
-          // message.addClass("col-12");
-          // message.text(
-          //   `${$(this)} saved to local storage`
-          // );
-
-          // $(".container").before(message);
-          // setTimeout(() => {
-          //   message.remove();
-          // }, 1000);
+function saveTask() {
+  var message1 = `${$(this)} saved to local storage`;
+  document.getElementById(".textBox")
+    .innerHTML = message1;
+  setTimeout(() => {message1.remove();}, 2000);
+  console.log(message1);
+}
 
