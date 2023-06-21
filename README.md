@@ -27,6 +27,6 @@ URL: TBA
 GITHUB: https://github.com/csetiawan88/workdayscheduler
 
 ## Screen shot:
-![Work Day Scheduler](./Assets/screenshot.jpg)
+![Work Day Scheduler](./Assets/Screenshot.jpg)
 
 
