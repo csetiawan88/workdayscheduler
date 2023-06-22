@@ -8,7 +8,7 @@
 5) click the save button for that timeblock
 6) text for that event is saved in local storage
 7) refresh the page, the saved events persist
-8) Add message after click save button.
+8) Add message (Saved to local storage) after click save button.
 
 ## Completed:
 1) I have completed the current dat to be display at the top of the calendar
@@ -18,7 +18,7 @@
 5) I have completed save function in local storage when the button click
 6) Text saved in the local storage
 7) refresh the page and saved events still persist.
-8) I have added message after click save button (2 seconds display)
+8) I have added message ((Saved to local storage) ) after click save button (2 seconds display)
 
 
 ## Deployment
