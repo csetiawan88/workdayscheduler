@@ -23,7 +23,6 @@
 
 ## Deployment
 URL: TBA
-
 GITHUB: https://github.com/csetiawan88/workdayscheduler
 
 ## Screen shot:

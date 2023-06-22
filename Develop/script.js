@@ -4,12 +4,38 @@ var today = dayjs();
 $("#currentDay").text(today.format("dddd, MMMM D, YYYY"));
 
 $(function () {
-  
-  // Apply Past, Present and Future and their color coded.
-
   var cal = new Date();
   var currentHour = cal.getHours();
   console.log(currentHour);
+
+  // Append time Block to index.html
+  for (let i = 9; i < 18; i++) {
+    var nightDay = "";
+    var timeNumber = "";
+    if (i < 12) {
+      nightDay = "AM";
+      timeNumber = i;
+    } else {
+      nightDay = "PM";
+      timeNumber = i - 12;
+    }
+
+    if (i === 12) {
+      timeNumber = "12";
+    }
+
+    $("#timeSection").append(
+      `<div id="hour-${i}" class="row time-block">
+        <div class="col-2 col-md-1 hour text-center py-3">${timeNumber} ${nightDay}</div>
+        <textarea class="col-8 col-md-10 description" rows="3" id="${i}"> </textarea>
+        <button class="btn saveBtn col-2 col-md-1" aria-label="save">
+          <i class="fas fa-save" aria-hidden="true"></i>
+        </button>
+      </div>`
+    );
+  }
+
+  // Apply Past, Present and Future and their color coded.
 
   $("textarea").each(function () {
     var $this = $(this);
@@ -27,7 +53,6 @@ $(function () {
   });
 
   // Save to local storage
-
   {
     $(".saveBtn").click(function () {
       var thisValue = $(this).siblings(".description").val();
@@ -36,39 +61,30 @@ $(function () {
       var timeSlot = $(this).siblings(".description").attr("id");
       console.log(timeSlot);
       localStorage.setItem(timeSlot, thisValue);
+
+      saveTask();
     });
   }
 
   // Call Local Storage to view after refresh the page
-
-  var saved9 = localStorage.getItem("9");
-  document.getElementById("9").value = saved9;
-  var saved10 = localStorage.getItem("10");
-  document.getElementById("10").value = saved10;
-  var saved11 = localStorage.getItem("11");
-  document.getElementById("11").value = saved11;
-  var saved12 = localStorage.getItem("12");
-  document.getElementById("12").value = saved12;
-  var saved13 = localStorage.getItem("13");
-  document.getElementById("13").value = saved13;
-  var saved14 = localStorage.getItem("14");
-  document.getElementById("14").value = saved14;
-  var saved15 = localStorage.getItem("15");
-  document.getElementById("15").value = saved15;
-  var saved16 = localStorage.getItem("16");
-  document.getElementById("16").value = saved16;
-  var saved17 = localStorage.getItem("17");
-  document.getElementById("17").value = saved17;
+  for (let i = 9; i < 18; i++) {
+    console.log(i);
+    var saved = localStorage.getItem(i);
+    // document.getElementById(i).value = saved9; // Javascript
+    $("#" + i).text(saved); // Jquery
+  }
 });
 
 // Add message after click save button (2 seconds display): . Saved to local storage
 
 function saveTask() {
   var message1 = `Saved to local storage`;
-  document.getElementById("textBox").innerHTML = message1;
+  // document.getElementById("textBox").innerHTML = message1; // Javascript
+  $("#textBox").text(message1); // Jquery
 
   setTimeout(() => {
-    document.getElementById("textBox").innerHTML = "";
+    // document.getElementById("textBox").innerHTML = ""; // Javascript
+    $("#textBox").text(""); // Jquery
   }, 2000);
   console.log(message1);
 }
